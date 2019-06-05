@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Игорь Спиридонов | Front-End разработчик</title>
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div style="display:none">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+    <div class="wrapper wrapper--anim">
+      <header class="header">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#">
+                <span class="visually-hidden">Главная</span>
+              </a>
+            </li>
+            <li class="nav__item" data-link="about">
+              <a href="#about">
+                <span>Обо мне</span>
+              </a>
+            </li>
+            <li class="nav__item" data-link="resume">
+              <a href="#resume">
+                <span>Резюме</span>
+              </a>
+            </li>
+            <li class="nav__item" data-link="works">
+              <a href="#works">
+                <span>Портфолио</span>
+              </a>
+            </li>
+            <li class="nav__item" data-link="contacts">
+              <a href="#contacts">
+                <span>Контакты</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__wrap">
+          <picture>
+            <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
+            <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
+            <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
+            <img class="header__avatar" src="img/avatar.jpg" width="140px" height="140px" alt="Игорь Спиридонов">
+          </picture>
+          <div class="header__text-wrap">
+            <p class="header__text">Игорь Спиридонов</p>
+            <b class="header__text header__text--b"><span lang="en">Front-End</span> разработчик</b>
+          </div>
+        </div>
+        <div class="header__button-wrap">
+          <button class="header__button" type="button">
+            <span class="visually-hidden">Меню</span>
+          </button>
+        </div>
+      </header>
+      <main class="main main--hide">
+        <button class="main__button" type="button">
+          <span class="visually-hidden">Назад</span>
+        </button>
+        <aside class="sidebar">
+          <h3>Рекомендации</h3>
+        </aside>
+        <h1 class="visually-hidden">Игорь Спиридонов <span lang="en">Front-End</span> разработчик</h1>
+        <section class="about" id="about">
+          <h2 class="visually-hidden">Обо мне</h2>
+          <p class="about__title">Привет</p>
+          <p class="about__text">Первый свой сайт с нуля я создал в далёком 2008 году. Тогда же увлёкся торговлей на бирже и разработкой автоматических торговых стратегий на языке программирования <span>MQL4</span>. Написал несколько индикаторов для графического анализа, которые до сих пор неплохо продаются.</p>
+          <p class="about__text">С 2015 года активно увлекся фронт-эндом.</p>
+          <p class="about__text">Как разработчик, считаю себя фанатом своего дела, обладающим "чувством прекрасного". Ответственно выполняю поставленные задачи. Особое внимание уделяю оптимизации.</p>
+          <p class="about__text">Глубоко убеждён, что создание качественного сайта возможно исключительно при таких условиях:</p>
+          <ul class="about__list">
+            <li class="about__item">логическая <span lang="en">HTML</span>-разметка;</li>
+            <li class="about__item">удобный и доступный интерфейс;</li>
+            <li class="about__item">mobile first;</li>
+            <li class="about__item">адаптивность под различные устройства;</li>
+            <li class="about__item">оптимизация графики и минификация кода.</li>
+          </ul>
+          <p class="about__signature">С уважением, <br>Игорь Спиридонов</p>
+        </section>
+        <section class="resume" id="resume">
+          <h2 class="visually-hidden">Моё резюме</h2>
+          <div class="resume__title-wrap">
+            <svg class="resume__icon" width="20px" height="20px">
+              <use xlink:href="#my-spade"></use>
+            </svg>
+            <h3 class="resume__title">Опыт работы</h3>
+          </div>
+          <ul class="resume__list">
+            <li class="resume__item">
+              <h4 class="resume__item-title">
+                <span lang="en">Front-End</span> Разработчик
+              </h4>
+              <b class="resume__company">
+                <span lang="en">Vantuva Limited</span>
+              </b>
+              <p class="resume__date">Май 2018 - настоящее время</p>
+              <p class="resume__text">Разработка и поддержка сайта компании.</p>
+              <p class="resume__text">Благодаря оптимизации добился отличных показателей скорости загрузки сайта.</p>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title">
+                <span lang="en">Front-End</span> Разработчик
+              </h4>
+              <b class="resume__company">Фриланс</b>
+              <p class="resume__date">Декабрь 2016 - Май 2018</p>
+              <p class="resume__text">Вёрстка, оптимизация и разработка сайтов.</p>
+            </li>
+          </ul>
+          <div class="resume__title-wrap">
+            <svg class="resume__icon" width="20px" height="20px">
+              <use xlink:href="#my-spade"></use>
+            </svg>
+            <h3 class="resume__title">Образование</h3>
+          </div>
+          <ul class="resume__list">
+            <li class="resume__item">
+              <h4 class="resume__item-title">Профессиональный <span lang="en">JavaScript</span>, уровень 1</h4>
+              <b class="resume__company">
+                <span lang="en">HTML-Academy</span>
+              </b>
+              <p class="resume__date">Май - Июль 2018</p>
+              <p class="resume__text">Успешно прошел курс и защитил учебный проект.</p>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title">Профессиональный <span lang="en">HTML & CSS</span>, уровень 2</h4>
+              <b class="resume__company">
+                <span lang="en">HTML-Academy</span>
+              </b>
+              <p class="resume__date">Апрель - Май 2018</p>
+              <p class="resume__text">Успешно прошел курс и защитил учебный проект.</p>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title">Профессиональный <span lang="en">HTML & CSS</span>, уровень 1</h4>
+              <b class="resume__company">
+                <span lang="en">HTML-Academy</span>
+              </b>
+              <p class="resume__date">Февраль - Апрель 2018</p>
+              <p class="resume__text">Успешно прошел курс и защитил учебный проект.</p>
+            </li>
+          </ul>
+          <div class="resume__title-wrap">
+            <svg class="resume__icon" width="20px" height="20px">
+              <use xlink:href="#my-spade"></use>
+            </svg>
+            <h3 class="resume__title">Навыки</h3>
+          </div>
+          <ul class="resume__list resume__list--skills">
+            <li class="resume__item">
+              <h4 class="resume__item-title"><span lang="en">HTML5</span></h4>
+              <ul class="resume__list">
+                <li>Типовая структура страницы</li>
+                <li>Сложные формы</li>
+                <li>Аудио и видео</li>
+                <li>Доступность интерфейса</li>
+              </ul>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title"><span lang="en">CSS3</span></h4>
+              <ul class="resume__list">
+                <li>Построение сеток</li>
+                <li>Декоративные элементы</li>
+                <li>Оформление текста</li>
+                <li>Динамические эффекты и анимация</li>
+              </ul>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title"><span lang="en">JavaScript</span></h4>
+              <ul class="resume__list">
+                <li>Операции с&nbsp;<span lang="en">DOM</span></li>
+                <li>События</li>
+                <li>Работа с сетью</li>
+              </ul>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title">Методологии верстки</h4>
+              <ul class="resume__list">
+                <li>Классический подход</li>
+                <li>Атомарный подход</li>
+                <li>БЭМ</li>
+              </ul>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title"><span lang="en">Less</span></h4>
+              <ul class="resume__list">
+                <li>Вложенные селекторы</li>
+                <li>Операции с цветами</li>
+                <li>Подключение файлов</li>
+                <li>Примеси и расширения</li>
+                <li>Сборка стилей</li>
+              </ul>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title"><span lang="en">Grunt</span></h4>
+              <ul class="resume__list">
+                <li>Автоматизация сборки проекта</li>
+                <li>Вотчеры</li>
+              </ul>
+            </li>
+            <li class="resume__item">
+              <h4 class="resume__item-title">Работа с графикой</h4>
+              <ul class="resume__list">
+                <li>Адаптивная графика и "ретинизация"</li>
+                <li lang="en">SVG</li>
+                <li>Оптимизация графики</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section class="works" id="works">
+          <h2 class="visually-hidden">Портфолио</h2>
+          <ul class="works__list">
+            <li class="works__item">
+              <div class="works__item-title-wrap">
+                <h3 class="works__item-title">
+                  <span lang="en">Vantuva</span>
+                </h3>
+              </div>
+              <div class="works__img-wrap">
+                <div class="works__pic-wrap">
+                  <picture>
+                    <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
+                    <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
+                    <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
+                    <img class="works__img" src="img/vantuva-desktop.png" width="215px" height="125px" alt="Мобильная версия">
+                  </picture>
+                </div>
+                <div class="works__pic-wrap works__pic-wrap--phone">
+                  <picture>
+                    <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
+                    <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
+                    <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
+                    <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
+                    <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
+                    <img class="works__img" src="img/vantuva-mobile.png" width="89px" height="181.5px" alt="Мобильная версия">
+                  </picture>
+                </div>
+              </div>
+              <p class="works__desc"><span lang="en">Vantuva Limited</span> - компания, которая помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
+              <p class="works__desc">Принимал участие в разработке дизайна. Сто процентная верстка, <span>JavaScript</span>, <span>php</span>-обработчик отправки формы.</p>
+              <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код. Для работы в условиях потери связи использовалась технология <span lang="en">Service Workers</span>.</p>
+            </li>
+          </ul>
+        </section>
+        <section class="contacts" id="contacts">
+          <h2>Контакты</h2>
+          <p class="contacts__text">Вы можете найти меня в социальных сетях</p>
+          <ul class="contacts__social">
+            <li>
+              <a href="#"><span class="visually-hidden" lang="en">GitHub</span></a>
+              <a href="#"><span class="visually-hidden" lang="en">Facebook</span></a>
+            </li>
+          </ul>
+          <p class="contacts__text">или просто напишите мне</p>
+          <form class="contacts__form form" action="contact-form.php" method="post">
+            <label for="form-name" class="visually-hidden">Ваше имя</label>
+            <input type="text" id="form-name" name="name" class="form__input" placeholder="Имя *" required=""> <label for="form-email" class="visually-hidden">Ваш <span lang="en">email</span></label>
+            <input type="email" id="form-email" name="email" class="form__input" placeholder="Email *" required="">
+            <label for="form-text" class="visually-hidden">Текст сообщения</label>
+            <input name="ahtung" type="text" style="display:none" value="">
+            <textarea placeholder="Ваше сообщение..." name="message" class="form__textarea" id="form-text"></textarea>
+            <button type="submit" class="form__button">Отправить</button>
+            <div class="form__notification"></div>
+          </form>
+        </section>
+      </main>
+      <footer class="footer">
+
+      </footer>
+    </div>
+    <script src="js/script.min.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.min.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

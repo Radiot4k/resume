@@ -1,0 +1,181 @@
+.works {
+  box-sizing: border-box;
+
+  position: absolute;
+
+  width: 100%;
+  padding: 0 25px;
+
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &--show {
+    position: initial;
+
+    transform: translateX(0);
+  }
+}
+
+.works__title {
+  margin: 0;
+
+  font-size: 20px;
+}
+
+.works__list {
+  padding: 0;
+
+  list-style: none;
+}
+
+.works__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.works__item-title-wrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #5f5f5f;
+  }
+}
+
+.works__item-title {
+  min-width: 170px;
+  margin: 0;
+  padding: 5px 12px;
+
+  font-size: 20px;
+  color: #e7e7e7;
+  text-transform: uppercase;
+
+  background-color: #5f5f5f;
+}
+
+.works__img-wrap {
+  position: relative;
+
+  align-self: center;
+
+  width: 270px;
+  height: 156.3px;
+}
+
+.works__pic-wrap {
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+  padding: 9px 31px;
+
+  overflow: hidden;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../img/laptop-frame.png");
+    background-size: cover;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    right: 34px;
+    bottom: 20px;
+    z-index: 5;
+
+    width: 9px;
+    height: 9px;
+
+    background-image: url("../img/tawk.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(1);
+  }
+
+  &--phone {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 62px;
+    height: 126px;
+    padding: 3px;
+
+    border-radius: 8px;
+  }
+
+  &--phone::before {
+    background-image: url("../img/phone-frame.png");
+  }
+
+  &--phone::after {
+    right: 5px;
+    bottom: 5px;
+
+    width: 5px;
+    height: 5px;
+  }
+}
+
+.works__img {
+  display: block;
+
+  width: 100%;
+
+  filter: grayscale(1);
+}
+
+.works__desc {
+  margin: 0;
+}
+
+// @media (min-width: 600px) {
+//   .works__item {
+//     position: relative;
+//   }
+//
+//   .works__img-wrap {
+//     position: absolute;
+//     left: 60%;
+//     top: 50%;
+//
+//     transform: translateY(-50%);
+//   }
+//
+//   .works__desc {
+//     box-sizing: border-box;
+//
+//     max-width: 60%;
+//     padding-right: 10px;
+//   }
+// }
