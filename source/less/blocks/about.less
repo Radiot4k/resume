@@ -1,20 +1,16 @@
 .about {
   box-sizing: border-box;
 
-  position: absolute;
+  display: none;
 
   width: 100%;
+  height: 100%;
   padding: 0 25px;
-
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
 
   overflow: auto;
 
   &--show {
-    position: initial;
-
-    transform: translateX(0);
+    display: block;
   }
 }
 
@@ -31,7 +27,20 @@
   margin-bottom: 10px;
 }
 
+.about__list {
+  margin: 0;
+  //padding: 0;
+
+  list-style: none;
+}
+
 .about__signature {
+  margin: 20px 0;
+
   font-size: 18px;
   color: #1a1a1a;
+}
+
+@media (min-width: 768px) and (min-height: 768px) {
+
 }

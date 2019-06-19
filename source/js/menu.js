@@ -4,13 +4,17 @@ var nav = document.querySelector('.nav');
 var about = document.querySelector('.about');
 var resume = document.querySelector('.resume');
 var works = document.querySelector('.works');
-var mainButton = document.querySelector('.main__button');
+var sectionWrapButtonWrap = document.querySelector('.section-wrap__button-wrap');
+var sectionWrapButton = document.querySelector('.section-wrap__button');
 var wrapper = document.querySelector('.wrapper');
 var headerButtonWrap = document.querySelector('.header__button-wrap');
 var headerButton = document.querySelector('.header__button');
 var headerWrap = document.querySelector('.header__wrap');
 var navItems = document.querySelectorAll('.nav__item');
 var main = document.querySelector('.main');
+var sectionWrap = document.querySelector('.section-wrap');
+var sidebar = document.querySelector('.sidebar');
+var sidebarButton = document.querySelector('.sidebar__button');
 
 //nav.classList.remove('nav--nojs');
 
@@ -29,9 +33,11 @@ var toggleClass = function(element, className) {
 var showHideHeaderText = function() {
   var avatar = document.querySelector('.header__avatar');
   var headerTextWrap = document.querySelector('.header__text-wrap');
-  avatar.classList.toggle('header__avatar--hide');
-  window.setTimeout(toggleClass, TIME / 2, headerTextWrap, 'header__text-wrap--hide');
-  window.setTimeout(toggleClass, TIME, headerButton, 'header__button--hide');
+  //avatar.classList.toggle('header__avatar--hide');
+  headerButton.classList.toggle('header__button--hide');
+  window.setTimeout(toggleClass, TIME, headerTextWrap, 'header__text-wrap--hide');
+  //window.setTimeout(toggleClass, TIME, headerButton, 'header__button--hide');
+  window.setTimeout(toggleClass, TIME / 2, avatar, 'header__avatar--hide');
   window.setTimeout(toggleClass, TIME + TIME / 2, wrapper, 'wrapper--anim');
 };
 
@@ -50,20 +56,39 @@ var onHeaderButtonClick = function(evt) {
   window.setTimeout(addClass, TIME * 2, headerWrap, 'header__wrap--hide');
 };
 
-var onMainButtonClick = function(evt) {
+var onSectionWrapButtonClick = function(evt) {
   evt.preventDefault();
-  var dataLink = mainButton.dataset.link;
+  var dataLink = sectionWrapButton.dataset.link;
   var hideElement = document.querySelector('.' + dataLink);
-  mainButton.removeEventListener('click', onMainButtonClick);
-  mainButton.classList.remove('main__button--anim');
-  window.setTimeout(removeClass, TIME, mainButton, 'main__button--show');
-  window.setTimeout(removeClass, TIME, hideElement, dataLink + '--show');
+  sectionWrapButton.removeEventListener('click', onSectionWrapButtonClick);
+  sidebarButton.removeEventListener('click', onSidebarButtonClick);
+  //sectionWrapButton.classList.remove('section-wrap__button--anim');
+  sectionWrapButton.classList.remove('section-wrap__button--show');
+  window.setTimeout(removeClass, TIME, sectionWrapButtonWrap, 'section-wrap__button-wrap--show');
+  window.setTimeout(removeClass, TIME, sectionWrap, 'section-wrap--show');
   window.setTimeout(removeClass, TIME, header, 'header--hide');
   for (var i = 0; i < navItems.length; i++) {
     window.setTimeout(addClass, TIME, navItems[i], 'nav__item--show');
     navItems[i].addEventListener('click', onNavItemClick);
   }
+  window.setTimeout(removeClass, TIME * 2, hideElement, dataLink + '--show');
   window.setTimeout(addClass, TIME * 2, main, 'main--hide');
+  window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--anim');
+  window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--open');
+};
+
+var onSidebarButtonClick = function(evt) {
+  evt.preventDefault();
+  sidebar.classList.toggle('sidebar--show');
+  sidebarButton.blur();
+  // var blur = function() {
+  //   sidebarButton.blur();
+  // };
+  //sectionWrapButtonWrap.classList.toggle('section-wrap__button-wrap--show');
+  //window.setTimeout(blur, TIME*5);
+  window.setTimeout(toggleClass, TIME, sectionWrapButtonWrap, 'section-wrap__button-wrap--show');
+  window.setTimeout(toggleClass, TIME * 2, sectionWrapButton, 'section-wrap__button--show');
+  //window.setTimeout(toggleClass, TIME * 2, sectionWrapButton, 'section-wrap__button--anim');
 };
 
 var onNavItemClick = function(evt) {
@@ -89,65 +114,24 @@ var onNavItemClick = function(evt) {
   } else {
     var dataLink = clickedElement.dataset.link;
     var showElement = document.querySelector('.' + dataLink);
+    showElement.classList.add(dataLink + '--show');
+    sectionWrapButtonWrap.classList.add('section-wrap__button-wrap--show');
     window.setTimeout(addClass, TIME * 2, header, 'header--hide');
     window.setTimeout(removeClass, TIME * 2, main, 'main--hide');
-    window.setTimeout(addClass, TIME * 3, showElement, dataLink + '--show');
-    window.setTimeout(addClass, TIME * 4, mainButton, 'main__button--show');
-    window.setTimeout(addClass, TIME * 5, mainButton, 'main__button--anim');
-    mainButton.dataset.link = dataLink;
-    mainButton.addEventListener('click', onMainButtonClick);
+    window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--anim');
+    window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--open');
+    window.setTimeout(addClass, TIME * 3, sectionWrap, 'section-wrap--show');
+    window.setTimeout(addClass, TIME * 4, sectionWrapButton, 'section-wrap__button--show');
+    //sectionWrapButton.classList.add('section-wrap__button--show');
+    window.setTimeout(addClass, TIME * 5, sectionWrapButton, 'section-wrap__button--anim');
+    sectionWrapButton.dataset.link = dataLink;
+    sectionWrapButton.addEventListener('click', onSectionWrapButtonClick);
+    sidebarButton.addEventListener('click', onSidebarButtonClick);
   }
 };
-// navItems[0].addEventListener('click', function(evt) {
-//   evt.preventDefault();
-//   for (var i = 1; i < navItems.length; i++) {
-//     navItems[i].classList.remove('nav__item--show');
-//   }
-//   window.setTimeout(removeClass, TIME, navItems[0], 'nav__item--show');
-//   window.setTimeout(showHideHeaderText, TIME * 2);
-//   window.setTimeout(removeClass, TIME * 2, nav, 'nav--show');
-//   window.setTimeout(removeClass, TIME * 2, headerButtonWrap, 'header__button-wrap--hide');
-//   headerButton.addEventListener('click', onHeaderButtonClick);
-// });
-//
-// navItems[1].addEventListener('click', function(evt) {
-//   evt.preventDefault();
-//   for (var i = 0; i < navItems.length; i++) {
-//     if (i !== 1) {
-//       navItems[i].classList.remove('nav__item--show');
-//     }
-//   }
-//   window.setTimeout(removeClass, TIME, navItems[1], 'nav__item--show');
-//   window.setTimeout(removeClass, TIME * 2, nav, 'nav--show');
-//   window.setTimeout(removeClass, TIME * 2, main, 'main--hide');
-//   window.setTimeout(addClass, TIME * 3, about, 'about--show');
-//   window.setTimeout(addClass, TIME * 4, mainButton, 'main__button--show');
-//   window.setTimeout(addClass, TIME * 5, mainButton, 'main__button--anim');
-//
-//   mainButton.addEventListener('click', onMainButtonClick);
-// });
-//
-// navItems[2].addEventListener('click', function(evt) {
-//   evt.preventDefault();
-//   for (var i = 0; i < navItems.length; i++) {
-//     navItems[i].classList.remove('nav__item--show');
-//   }
-//   window.setTimeout(removeClass, TIME, nav, 'nav--show');
-//   window.setTimeout(addClass, TIME, resume, 'resume--show');
-//   window.setTimeout(addClass, TIME * 2, mainButton, 'main__button--show');
-//
-//   mainButton.addEventListener('click', onMainButtonClick);
-// });
-//
-// navItems[3].addEventListener('click', function(evt) {
-//   evt.preventDefault();
-//   mainButton.addEventListener('click', onMainButtonClick);
-//   for (var i = 0; i < navItems.length; i++) {
-//     navItems[i].classList.remove('nav__item--show');
-//   }
-//   window.setTimeout(removeClass, TIME, nav, 'nav--show');
-//   window.setTimeout(addClass, TIME, works, 'works--show');
-//   window.setTimeout(addClass, TIME * 2, mainButton, 'main__button--show');
-// });
 
 headerButton.addEventListener('click', onHeaderButtonClick);
+
+// sectionWrap.addEventListener('scroll', function () {
+//   console.log('getBoundingClientRect' + sidebar.getBoundingClientRect().top);
+// });

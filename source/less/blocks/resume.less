@@ -1,20 +1,16 @@
 .resume {
   box-sizing: border-box;
 
-  position: absolute;
+  display: none;
 
   width: 100%;
+  height: 100%;
   padding: 0 25px;
-
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
 
   overflow: auto;
 
   &--show {
-    position: initial;
-
-    transform: translateX(0);
+    display: block;
   }
 }
 
@@ -56,6 +52,7 @@
   padding: 5px 12px;
 
   font-size: 20px;
+  font-weight: 400;
   color: #e7e7e7;
   text-transform: uppercase;
 
@@ -74,6 +71,7 @@
   margin: 0;
 
   font-size: 18px;
+  font-weight: 400;
   color: #1a1a1a;
   text-transform: uppercase;
 
