@@ -1,4 +1,5 @@
 var TIME = 400;
+var body = document.querySelector('body');
 var header = document.querySelector('.header');
 var nav = document.querySelector('.nav');
 var about = document.querySelector('.about');
@@ -16,8 +17,6 @@ var sectionWrap = document.querySelector('.section-wrap');
 var sidebar = document.querySelector('.sidebar');
 var sidebarButton = document.querySelector('.sidebar__button');
 
-//nav.classList.remove('nav--nojs');
-
 var addClass = function (element, className) {
   element.classList.add(className);
 };
@@ -33,10 +32,8 @@ var toggleClass = function(element, className) {
 var showHideHeaderText = function() {
   var avatar = document.querySelector('.header__avatar');
   var headerTextWrap = document.querySelector('.header__text-wrap');
-  //avatar.classList.toggle('header__avatar--hide');
   headerButton.classList.toggle('header__button--hide');
   window.setTimeout(toggleClass, TIME, headerTextWrap, 'header__text-wrap--hide');
-  //window.setTimeout(toggleClass, TIME, headerButton, 'header__button--hide');
   window.setTimeout(toggleClass, TIME / 2, avatar, 'header__avatar--hide');
   window.setTimeout(toggleClass, TIME + TIME / 2, wrapper, 'wrapper--anim');
 };
@@ -49,7 +46,7 @@ var onHeaderButtonClick = function(evt) {
   }
   nav.classList.add('nav--show');
   for (var i = 0; i < navItems.length; i++) {
-    window.setTimeout(addClass, TIME, navItems[i], 'nav__item--show');
+    window.setTimeout(addClass, TIME * 2, navItems[i], 'nav__item--show');
   }
   showHideHeaderText();
   window.setTimeout(addClass, TIME * 2, headerButtonWrap, 'header__button-wrap--hide');
@@ -62,19 +59,18 @@ var onSectionWrapButtonClick = function(evt) {
   var hideElement = document.querySelector('.' + dataLink);
   sectionWrapButton.removeEventListener('click', onSectionWrapButtonClick);
   sidebarButton.removeEventListener('click', onSidebarButtonClick);
-  //sectionWrapButton.classList.remove('section-wrap__button--anim');
   sectionWrapButton.classList.remove('section-wrap__button--show');
   window.setTimeout(removeClass, TIME, sectionWrapButtonWrap, 'section-wrap__button-wrap--show');
   window.setTimeout(removeClass, TIME, sectionWrap, 'section-wrap--show');
-  window.setTimeout(removeClass, TIME, header, 'header--hide');
+  window.setTimeout(removeClass, TIME * 2, hideElement, dataLink + '--show');
+  window.setTimeout(removeClass, TIME * 3, header, 'header--hide');
   for (var i = 0; i < navItems.length; i++) {
-    window.setTimeout(addClass, TIME, navItems[i], 'nav__item--show');
+    window.setTimeout(addClass, TIME * 3, navItems[i], 'nav__item--show');
     navItems[i].addEventListener('click', onNavItemClick);
   }
-  window.setTimeout(removeClass, TIME * 2, hideElement, dataLink + '--show');
-  window.setTimeout(addClass, TIME * 2, main, 'main--hide');
-  window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--anim');
-  window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--open');
+  window.setTimeout(addClass, TIME * 3, main, 'main--hide');
+  window.setTimeout(toggleClass, TIME * 3, wrapper, 'wrapper--anim');
+  window.setTimeout(toggleClass, TIME * 3, wrapper, 'wrapper--open');
 };
 
 var onSidebarButtonClick = function(evt) {
@@ -122,7 +118,6 @@ var onNavItemClick = function(evt) {
     window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--open');
     window.setTimeout(addClass, TIME * 3, sectionWrap, 'section-wrap--show');
     window.setTimeout(addClass, TIME * 4, sectionWrapButton, 'section-wrap__button--show');
-    //sectionWrapButton.classList.add('section-wrap__button--show');
     window.setTimeout(addClass, TIME * 5, sectionWrapButton, 'section-wrap__button--anim');
     sectionWrapButton.dataset.link = dataLink;
     sectionWrapButton.addEventListener('click', onSectionWrapButtonClick);

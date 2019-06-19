@@ -5,23 +5,18 @@
   top: 100%;
   z-index: 5;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   height: 100%;
   width: 100%;
-  padding: 35px 0 0;
+  padding: 48px 0 0;
 
   color: #e7e7e7;
 
   background-color: #373737;
   overflow: hidden;
-  //will-change: transform;
-  transform: translateY(-35px);
-  transition: transform 0.4s ease;
-  animation: 0.6s ease sidebar 1s;
-  animation-fill-mode: backwards;
-
-  &--show {
-    transform: translateY(-100%);
-  }
 
   &--show .sidebar__wrap {
     display: block;
@@ -51,7 +46,7 @@
   left: 0;
 
   width: 100%;
-  height: 35px;
+  height: 48px;
   padding: 0;
 
   border: 0;
@@ -78,11 +73,11 @@
     content: "";
 
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 50%;
 
-    width: 30px;
-    height: 25px;
+    width: 34px;
+    height: 28px;
 
     background-color: #5f5f5f;
     transform: translateX(-50%);
@@ -99,38 +94,18 @@
   display: none;
 
   width: 100%;
+  max-width: 400px;
   height: 100%;
   padding: 25px 25px 0;
 
   overflow: auto;
 }
 
-.sidebar__title-wrap {
-  position: relative;
-
-  display: flex;
-  align-items: center;
+.sidebar__title {
+  box-sizing: border-box;
 
   width: 100%;
   margin: 0 0 25px;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-
-    width: 100%;
-    height: 2px;
-
-    background-color: #5f5f5f;
-  }
-}
-
-.sidebar__title {
-  z-index: 1;
-
-  min-width: 170px;
-  margin: 0;
   padding: 5px 12px;
 
   font-size: 20px;
@@ -217,7 +192,6 @@
 
 .sidebar__ref-pos {
   margin: 0;
-  margin-bottom: 10px;
 
   font-weight: 300;
   text-transform: uppercase;
@@ -226,7 +200,7 @@
 .sidebar__ref-link {
   display: inline-block;
 
-  margin-bottom: 10px;
+  padding: 15px 0;
 
   color: #e7e7e7;
   text-decoration: none;
@@ -303,6 +277,10 @@
   &--90::after {
     width: 90%;
   }
+
+  &--55::after {
+    width: 55%;
+  }
 }
 
 .sidebar__certificates-list {
@@ -313,7 +291,6 @@
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
-  max-width: 325px;
 
   list-style: none;
 }
@@ -347,14 +324,14 @@
 
 .sidebar__contacts-list {
   margin: 0;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   padding: 0;
 
   list-style: none;
 }
 
 .sidebar__contacts-item {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 
   & a {
     display: flex;
@@ -362,6 +339,7 @@
     align-items: center;
 
     width: fit-content;
+    padding: 12px 0;
 
     color: #e7e7e7;
     text-decoration: none;
@@ -381,13 +359,15 @@
 }
 
 .sidebar__contacts-icon {
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
 
   fill: #e7e7e7;
   transition: fill 0.4s ease;
 }
 
-@media (min-width: 768px) and (min-height: 768px) {
+@media (min-width: 768px) {
   .sidebar {
     position: static;
 
@@ -400,8 +380,6 @@
 
     overflow: auto;
     transform: none;
-    animation: 0.4s ease 0.8s sidebar2;
-    animation-fill-mode: backwards;
   }
 
   .sidebar__button {
@@ -412,26 +390,6 @@
     display: block;
 
     padding-top: 0;
-  }
-}
-
-@keyframes sidebar {
-  0% {
-    transform: translateY(100%);
-  }
-
-  100% {
-    transform: translateY(-35px);
-  }
-}
-
-@keyframes sidebar2 {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(0);
   }
 }
 

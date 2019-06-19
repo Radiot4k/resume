@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Игорь Спиридонов - Front-End разработчик. Резюме">
     <title>Игорь Спиридонов | Front-End разработчик</title>
     <link rel="preload" href="fonts/RobotoCondensed-Regular.woff2" as="font">
     <link rel="preload" href="fonts/RobotoCondensed-Light.woff2" as="font">
@@ -12,6 +13,11 @@
     <div style="display:none">
       <include src="build/img/sprite.svg"></include>
     </div>
+    <picture>
+      <source type="image/webp" media="(min-width: 1400px)" srcset="img/pencil@1x.webp 1x, img/pencil@2x.webp 2x">
+      <source media="(min-width: 1400px)" srcset="img/pencil@1x.png 1x, img/pencil@2x.png 2x">
+      <img class="body-img" src="img/pencil.jpg" width="1px" height="1px" alt="Карандаш" >
+    </picture>
     <div class="wrapper wrapper--anim">
       <header class="header">
         <nav class="nav">
@@ -45,13 +51,9 @@
         </nav>
         <div class="header__wrap">
           <picture>
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/avatar-big@1x.webp 1x, img/avatar-big@2x.webp 2x">
             <source type="image/webp" srcset="img/avatar@1x.webp 1x, img/avatar@2x.webp 2x">
-            <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
-            <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
-            <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
-            <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
-            <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
-            <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
+            <source media="(min-width: 768px)" srcset="img/avatar-big@1x.jpg 1x, img/avatar-big@2x.jpg 2x">
             <img class="header__avatar" src="img/avatar@1x.jpg" srcset="img/avatar@2x.jpg 2x" width="140px" height="140px" alt="Игорь Спиридонов">
           </picture>
           <div class="header__text-wrap">
@@ -80,13 +82,11 @@
             <div class="sidebar__wrap">
               <h3 class="visually-hidden">Дополнительная информация</h3>
               <div class="sidebar__skills">
-                <div class="sidebar__title-wrap">
-                  <h4 class="sidebar__title">Навыки</h4>
-                </div>
+                <h4 class="sidebar__title">Навыки</h4>
                 <ul class="sidebar__skills-list">
                   <li class="sidebar__skills-item">
                     <span class="sidebar__skills-title" lang="en">HTML5</span>
-                    <div class="sidebar__skills-progress sidebar__skills-progress--96"></div>
+                    <div class="sidebar__skills-progress sidebar__skills-progress--98"></div>
                   </li>
                   <li class="sidebar__skills-item">
                     <span class="sidebar__skills-title" lang="en">CSS3</span>
@@ -95,6 +95,10 @@
                   <li class="sidebar__skills-item">
                     <span class="sidebar__skills-title" lang="en">JavaScript</span>
                     <div class="sidebar__skills-progress sidebar__skills-progress--85"></div>
+                  </li>
+                  <li class="sidebar__skills-item">
+                    <span class="sidebar__skills-title" lang="en">Canvas</span>
+                    <div class="sidebar__skills-progress sidebar__skills-progress--55"></div>
                   </li>
                   <li class="sidebar__skills-item">
                     <span class="sidebar__skills-title" lang="en">Photoshop</span>
@@ -111,76 +115,44 @@
                 </ul>
               </div>
               <div class="sidebar__certificates">
-                <div class="sidebar__title-wrap">
-                  <h4 class="sidebar__title">Сертификаты</h4>
-                </div>
+                <h4 class="sidebar__title">Сертификаты</h4>
                 <ul class="sidebar__certificates-list">
                   <li class="sidebar__certificates-item">
-                    <a href="https://assets.htmlacademy.ru/certificates/intensive/67/671597.pdf?1522308536" target="_blank">
+                    <a href="https://assets.htmlacademy.ru/certificates/intensive/67/671597.pdf?1522308536" target="_blank" rel="noopener">
                       <picture>
                         <source type="image/webp" srcset="img/certificate1@1x.webp 1x, img/certificate1@2x.webp 2x">
-                        <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
-                        <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
-                        <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
-                        <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
-                        <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
                         <img class="sidebar__sertificate-img" src="img/certificate1@1x.jpg" srcset="img/certificate1@2x.jpg 2x" width="80px" height="112px" alt="Профессиональный HTML & CSS, уровень 1">
                       </picture>
                     </a>
                   </li>
                   <li class="sidebar__certificates-item">
-                    <a href="https://assets.htmlacademy.ru/certificates/intensive/71/671597.pdf?1525973550" target="_blank">
+                    <a href="https://assets.htmlacademy.ru/certificates/intensive/71/671597.pdf?1525973550" target="_blank" rel="noopener">
                       <picture>
                         <source type="image/webp" srcset="img/certificate2@1x.webp 1x, img/certificate2@2x.webp 2x">
-                        <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
-                        <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
-                        <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
-                        <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
-                        <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
                         <img class="sidebar__sertificate-img" src="img/certificate2@1x.jpg" srcset="img/certificate2@2x.jpg 2x" width="80px" height="112px" alt="Профессиональный HTML & CSS, уровень 2">
                       </picture>
                     </a>
                   </li>
                   <li class="sidebar__certificates-item">
-                    <a href="https://assets.htmlacademy.ru/certificates/intensive/83/671597.pdf?1531133461" target="_blank">
+                    <a href="https://assets.htmlacademy.ru/certificates/intensive/83/671597.pdf?1531133461" target="_blank" rel="noopener">
                       <picture>
                         <source type="image/webp" srcset="img/certificate3@1x.webp 1x, img/certificate3@2x.webp 2x">
-                        <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
-                        <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
-                        <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
-                        <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
-                        <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
                         <img class="sidebar__sertificate-img" src="img/certificate3@1x.jpg" srcset="img/certificate3@2x.jpg 2x" width="80px" height="112px" alt="Профессиональный JavaScript, уровень 1">
                       </picture>
                     </a>
                   </li>
                   <li class="sidebar__certificates-item">
-                    <a href="https://www.sololearn.com/Certificate/1082-11648356/pdf/" target="_blank">
+                    <a href="https://www.sololearn.com/Certificate/1082-11648356/pdf/" target="_blank" rel="noopener">
                       <picture>
                         <source type="image/webp" srcset="img/certificate4@1x.webp 1x, img/certificate4@2x.webp 2x">
-                        <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
-                        <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
-                        <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
-                        <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
-                        <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
                         <img class="sidebar__sertificate-img sidebar__sertificate-img--solo" src="img/certificate4@1x.jpg" srcset="img/certificate4@2x.jpg 2x" width="125px" height="88px" alt="JQuery Tutorial course">
                       </picture>
                     </a>
                   </li>
                   <li class="sidebar__certificates-item">
-                    <a href="https://www.sololearn.com/Certificate/1024-11648356/pdf/" target="_blank">
+                    <a href="https://www.sololearn.com/Certificate/1024-11648356/pdf/" target="_blank" rel="noopener">
                       <picture>
                         <source type="image/webp" srcset="img/certificate5@1x.webp 1x, img/certificate5@2x.webp 2x">
-                        <!--source type="image/webp" media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.webp 1x, img/photo-hare-desktop@2x.webp 2x">
-                        <source type="image/webp" media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.webp 1x, img/photo-hare-tablet@2x.webp 2x">
-                        <source type="image/webp" srcset="img/photo-hare-mobile@1x.webp 1x, img/photo-hare-mobile@2x.webp 2x">
-                        <source media="(min-width: 1150px)" srcset="img/photo-hare-desktop@1x.jpg 1x, img/photo-hare-desktop@2x.jpg 2x">
-                        <source media="(min-width: 768px)" srcset="img/photo-hare-tablet@1x.jpg 1x, img/photo-hare-tablet@2x.jpg 2x">
-                        <img class="header__avatar" src="img/avatar.jpg" srcset="img/photo-hare-mobile@2x.jpg 2x" width="260" height="315" alt="Зайчик-попрыгайчик"-->
                         <img class="sidebar__sertificate-img sidebar__sertificate-img--solo" src="img/certificate5@1x.jpg" srcset="img/certificate5@2x.jpg 2x" width="125px" height="88px" alt="JavaScript Tutorial course">
                       </picture>
                     </a>
@@ -188,17 +160,13 @@
                 </ul>
               </div>
               <div class="sidebar__ref">
-                <div class="sidebar__title-wrap">
-                  <h4 class="sidebar__title">Рекомендации</h4>
-                </div>
+                <h4 class="sidebar__title">Рекомендации</h4>
                 <b class="sidebar__ref-name">Антон Киреев</b>
                 <p class="sidebar__ref-pos">Директор компании <span lang="en">Vantuva Limited</span></p>
                 <a class="sidebar__ref-link" href="https://www.facebook.com/anton.kireev.564">Связаться</a>
               </div>
               <div class="sidebar__lang">
-                <div class="sidebar__title-wrap">
-                  <h4 class="sidebar__title">Языки</h4>
-                </div>
+                <h4 class="sidebar__title">Языки</h4>
                 <ul class="sidebar__lang-list">
                   <li class="sidebar__lang-item">
                     <h5 class="sidebar__lang-title">Русский</h5>
@@ -263,14 +231,12 @@
                 </ul>
               </div>
               <div class="sidebar__contacts">
-                <div class="sidebar__title-wrap">
-                  <h4 class="sidebar__title">Контакты</h4>
-                </div>
+                <h4 class="sidebar__title">Контакты</h4>
                 <ul class="sidebar__contacts-list">
                   <li class="sidebar__contacts-item">
                     <a href="tel:+79251705916">
                       <svg class="sidebar__contacts-icon" width="20px" height="20px">
-                        <use xlink:href="#my-spade"></use>
+                        <use xlink:href="#phone"></use>
                       </svg>
                       +7 925 170 5916
                     </a>
@@ -278,7 +244,7 @@
                   <li class="sidebar__contacts-item">
                     <a href="tel:+380660724413">
                       <svg class="sidebar__contacts-icon" width="20px" height="20px">
-                        <use xlink:href="#my-spade"></use>
+                        <use xlink:href="#phone"></use>
                       </svg>
                       +38 066 072 4413
                     </a>
@@ -286,23 +252,23 @@
                   <li class="sidebar__contacts-item">
                     <a href="mailto:radiot4k@gmail.com">
                       <svg class="sidebar__contacts-icon" width="20px" height="20px">
-                        <use xlink:href="#my-spade"></use>
+                        <use xlink:href="#gmail"></use>
                       </svg>
                       <span lang="en">radiot4k@gmail.com</span>
                     </a>
                   </li>
                   <li class="sidebar__contacts-item">
-                    <a href="https://github.com/Radiot4k" target="_blank">
+                    <a href="https://github.com/Radiot4k" target="_blank" rel="noopener">
                       <svg class="sidebar__contacts-icon" width="20px" height="20px">
-                        <use xlink:href="#my-spade"></use>
+                        <use xlink:href="#github"></use>
                       </svg>
                       <span lang="en">GitHub</span>
                     </a>
                   </li>
                   <li class="sidebar__contacts-item">
-                    <a href="https://www.facebook.com/profile.php?id=100004322280249" target="_blank">
+                    <a href="https://www.facebook.com/profile.php?id=100004322280249" target="_blank" rel="noopener">
                       <svg class="sidebar__contacts-icon" width="20px" height="20px">
-                        <use xlink:href="#my-spade"></use>
+                        <use xlink:href="#facebook"></use>
                       </svg>
                       <span lang="en">Facebook</span>
                     </a>
@@ -329,12 +295,7 @@
           </section>
           <section class="resume" id="resume">
             <h2 class="visually-hidden">Моё резюме</h2>
-            <div class="resume__title-wrap">
-              <svg class="resume__icon" width="20px" height="20px">
-                <use xlink:href="#my-spade"></use>
-              </svg>
-              <h3 class="resume__title">Опыт работы</h3>
-            </div>
+            <h3 class="resume__title">Опыт работы</h3>
             <ul class="resume__list">
               <li class="resume__item">
                 <h4 class="resume__item-title">
@@ -356,12 +317,7 @@
                 <p class="resume__text">Вёрстка, оптимизация и разработка сайтов.</p>
               </li>
             </ul>
-            <div class="resume__title-wrap">
-              <svg class="resume__icon" width="20px" height="20px">
-                <use xlink:href="#my-spade"></use>
-              </svg>
-              <h3 class="resume__title">Образование</h3>
-            </div>
+            <h3 class="resume__title">Образование</h3>
             <ul class="resume__list">
               <li class="resume__item">
                 <h4 class="resume__item-title">Профессиональный <span lang="en">JavaScript</span>, уровень 1</h4>
@@ -388,12 +344,7 @@
                 <p class="resume__text">Успешно прошел курс и защитил учебный проект.</p>
               </li>
             </ul>
-            <div class="resume__title-wrap">
-              <svg class="resume__icon" width="20px" height="20px">
-                <use xlink:href="#my-spade"></use>
-              </svg>
-              <h3 class="resume__title">Навыки</h3>
-            </div>
+            <h3 class="resume__title">Навыки</h3>
             <ul class="resume__list resume__list--skills">
               <li class="resume__item">
                 <h4 class="resume__item-title"><span lang="en">HTML5</span></h4>
@@ -419,6 +370,7 @@
                   <li>Операции с&nbsp;<span lang="en">DOM</span></li>
                   <li>События</li>
                   <li>Работа с сетью</li>
+                  <li lang="en">Canvas</li>
                 </ul>
               </li>
               <li class="resume__item">
@@ -427,6 +379,21 @@
                   <li>Классический подход</li>
                   <li>Атомарный подход</li>
                   <li>БЭМ</li>
+                </ul>
+              </li>
+              <li class="resume__item">
+                <h4 class="resume__item-title">Работа с графикой</h4>
+                <ul class="resume__list">
+                  <li>Адаптивная графика и ретинизация</li>
+                  <li lang="en">SVG</li>
+                  <li>Оптимизация графики</li>
+                </ul>
+              </li>
+              <li class="resume__item">
+                <h4 class="resume__item-title"><span lang="en">Grunt</span></h4>
+                <ul class="resume__list">
+                  <li>Автоматизация сборки проекта</li>
+                  <li>Вотчеры</li>
                 </ul>
               </li>
               <li class="resume__item">
@@ -440,18 +407,12 @@
                 </ul>
               </li>
               <li class="resume__item">
-                <h4 class="resume__item-title"><span lang="en">Grunt</span></h4>
+                <h4 class="resume__item-title">Дополнительно</h4>
                 <ul class="resume__list">
-                  <li>Автоматизация сборки проекта</li>
-                  <li>Вотчеры</li>
-                </ul>
-              </li>
-              <li class="resume__item">
-                <h4 class="resume__item-title">Работа с графикой</h4>
-                <ul class="resume__list">
-                  <li>Адаптивная графика и "ретинизация"</li>
-                  <li lang="en">SVG</li>
-                  <li>Оптимизация графики</li>
+                  <li lang="en">MQL4/MQL5</li>
+                  <li lang="en">Git</li>
+                  <li lang="en">PHP</li>
+                  <li>Опыт работы с базами данных</li>
                 </ul>
               </li>
             </ul>
@@ -460,12 +421,10 @@
             <h2 class="visually-hidden">Портфолио</h2>
             <ul class="works__list">
               <li class="works__item">
-                <div class="works__item-title-wrap">
-                  <h3 class="works__item-title">
-                    <span lang="en">Vantuva</span>
-                  </h3>
-                </div>
-                <a class="works__img-wrap" href="https://vantuva.com" target="_blank">
+                <h3 class="works__item-title">
+                  <span lang="en">Vantuva</span>
+                </h3>
+                <a class="works__img-wrap" href="https://vantuva.com" target="_blank" rel="noopener">
                   <div class="works__pic-wrap">
                     <picture>
                       <source type="image/webp" srcset="img/vantuva-desktop@1x.webp 1x, img/vantuva-desktop@2x.webp 2x">
@@ -481,18 +440,27 @@
                   </div>
                   <div class="works__frame works__frame--phone"></div>
                 </a>
-                <p class="works__desc">Компания помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
-                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Workers.</p>
-                <p class="works__desc">Принимал участие в разработке дизайна.</p>
-                <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код.</p>
+                <p class="works__desc works__desc--title">Сайт консалтинговой компании</p>
+                <p class="works__desc">Техническое задание:</p>
+                <ul class="works__desc-list">
+                  <li class="works__desc-item">Верстка всех страниц сайта.</li>
+                  <li class="works__desc-item">Две версии сайта: на английском и на русском языке.</li>
+                  <li class="works__desc-item">Адаптивность сетки: мобильная и десктопная версии.</li>
+                  <li class="works__desc-item">Адаптивность графики: ретинизация, векторные изображения.</li>
+                  <li class="works__desc-item">Анимация всех всплывающих окон и декоративных элементов.</li>
+                  <li class="works__desc-item">Кроссбраузерность: Chrome, Firefox, Opera, Safari, Edge и IE11.</li>
+                  <li class="works__desc-item">Полноценное функционирование формы обратной связи.</li>
+                </ul>
+                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Worker.</p>
+                <p class="works__desc">Реализация задания: 100%.</p>
+                <p class="works__desc">Принимал участие в создании дизайна.</p>
+                <p class="works__desc">Благодаря оптимизации добился 100% по всем показателям аудита Lighthouse.</p>
               </li>
               <li class="works__item">
-                <div class="works__item-title-wrap">
-                  <h3 class="works__item-title">
-                    <span lang="en">Mishka</span>
-                  </h3>
-                </div>
-                <a class="works__img-wrap" href="https://radiot4k.github.io/mishka-site/" target="_blank">
+                <h3 class="works__item-title">
+                  <span lang="en">Mishka</span>
+                </h3>
+                <a class="works__img-wrap" href="https://radiot4k.github.io/mishka-site/" target="_blank" rel="noopener">
                   <div class="works__pic-wrap">
                     <picture>
                       <source type="image/webp" srcset="img/mishka-desktop@1x.webp 1x, img/mishka-desktop@2x.webp 2x">
@@ -515,18 +483,26 @@
                   </div>
                   <div class="works__frame works__frame--phone"></div>
                 </a>
-                <p class="works__desc">Компания помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
-                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Workers.</p>
-                <p class="works__desc">Принимал участие в разработке дизайна.</p>
-                <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код.</p>
+                <p class="works__desc works__desc--title">Сайт интернет-магазина изделий ручной работы</p>
+                <p class="works__desc">Техническое задание:</p>
+                <ul class="works__desc-list">
+                  <li class="works__desc-item">Верстка главной страницы, страницы с формой и страницы каталога.</li>
+                  <li class="works__desc-item">Адаптивность сетки: мобильная, планшетная и десктопная версии («фикс» или «резина»).</li>
+                  <li class="works__desc-item">Адаптивность графики: ретинизация, векторные изображения.</li>
+                  <li class="works__desc-item">Используемая методология: БЭМ.</li>
+                  <li class="works__desc-item">Используемый препроцессор: Less или Sass.</li>
+                  <li class="works__desc-item">Используемый инструмент автоматизации: Grunt или Gulp.</li>
+                  <li class="works__desc-item">Кроссбраузерность: Chrome, Firefox, Opera, Safari, Edge и IE11.</li>
+                  <li class="works__desc-item">Анимация всех всплывающих окон.</li>
+                </ul>
+                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript.</p>
+                <p class="works__desc">Реализация задания: 100%.</p>
               </li>
               <li class="works__item">
-                <div class="works__item-title-wrap">
-                  <h3 class="works__item-title">
-                    <span lang="en">Keksogram</span>
-                  </h3>
-                </div>
-                <a class="works__img-wrap" href="https://radiot4k.github.io/671597-kekstagram/" target="_blank">
+                <h3 class="works__item-title">
+                  <span lang="en">Keksogram</span>
+                </h3>
+                <a class="works__img-wrap" href="https://radiot4k.github.io/671597-kekstagram/" target="_blank" rel="noopener">
                   <div class="works__pic-wrap">
                     <picture>
                       <source type="image/webp" srcset="img/keksogram-desktop@1x.webp 1x, img/keksogram-desktop@2x.webp 2x">
@@ -535,18 +511,24 @@
                   </div>
                   <div class="works__frame"></div>
                 </a>
-                <p class="works__desc">Компания помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
-                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Workers.</p>
-                <p class="works__desc">Принимал участие в разработке дизайна.</p>
-                <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код.</p>
+                <p class="works__desc works__desc--title">Сервис просмотра изображений</p>
+                <p class="works__desc">Техническое задание:</p>
+                <ul class="works__desc-list">
+                  <li class="works__desc-item">Загрузка нового изображения на сайт и заполнение информации о нём.</li>
+                  <li class="works__desc-item">Редактирование изображения и ограничения, накладываемые на поля.</li>
+                  <li class="works__desc-item">Отправка данных на сервер и обработка ошибок.</li>
+                  <li class="works__desc-item">Просмотр загруженных изображений.</li>
+                  <li class="works__desc-item">Фильтрация изображений от других пользователей.</li>
+                  <li class="works__desc-item">Доступность и активные элементы: взаимодействие со всеми активными элементами на странице должно быть доступно с помощью клавиатуры.</li>
+                </ul>
+                <p class="works__desc">Технологии: JavaScript.</p>
+                <p class="works__desc">Реализация задания: 100%.</p>
               </li>
               <li class="works__item">
-                <div class="works__item-title-wrap">
-                  <h3 class="works__item-title">
-                    <span lang="en">Code and Magick</span>
-                  </h3>
-                </div>
-                <a class="works__img-wrap" href="https://radiot4k.github.io/671597-code-and-magick/" target="_blank">
+                <h3 class="works__item-title">
+                  <span lang="en">Code and Magick</span>
+                </h3>
+                <a class="works__img-wrap" href="https://radiot4k.github.io/671597-code-and-magick/" target="_blank" rel="noopener">
                   <div class="works__pic-wrap">
                     <picture>
                       <source type="image/webp" srcset="img/code-and-magick@1x.webp 1x, img/code-and-magick@2x.webp 2x">
@@ -555,18 +537,23 @@
                   </div>
                   <div class="works__frame"></div>
                 </a>
-                <p class="works__desc">Компания помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
-                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Workers.</p>
-                <p class="works__desc">Принимал участие в разработке дизайна.</p>
-                <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код.</p>
+                <p class="works__desc works__desc--title">Игра</p>
+                <p class="works__desc">Техническое задание:</p>
+                <ul class="works__desc-list">
+                  <li class="works__desc-item">По окончании игры вывести результаты. Облако результатов нарисовать на Canvas.</li>
+                  <li class="works__desc-item">Реализовать перетаскивание окна настроек.</li>
+                  <li class="works__desc-item">В окне настроек реализовать возможность измения цвета глаз, мантии и фаэрбола.</li>
+                  <li class="works__desc-item">При изменении мага генерировать похожих персонажей.</li>
+                  <li class="works__desc-item">Доступность и активные элементы: взаимодействие со всеми активными элементами на странице должно быть доступно с помощью клавиатуры.</li>
+                </ul>
+                <p class="works__desc">Технологии: JavaScript, Canvas.</p>
+                <p class="works__desc">Реализация задания: 100%.</p>
               </li>
               <li class="works__item">
-                <div class="works__item-title-wrap">
-                  <h3 class="works__item-title">
-                    <span lang="en">Device</span>
-                  </h3>
-                </div>
-                <a class="works__img-wrap" href="https://radiot4k.github.io/671597-device/" target="_blank">
+                <h3 class="works__item-title">
+                  <span lang="en">Device</span>
+                </h3>
+                <a class="works__img-wrap" href="https://radiot4k.github.io/671597-device/" target="_blank" rel="noopener">
                   <div class="works__pic-wrap">
                     <picture>
                       <source type="image/webp" srcset="img/device-desktop@1x.webp 1x, img/device-desktop@2x.webp 2x">
@@ -575,18 +562,23 @@
                   </div>
                   <div class="works__frame"></div>
                 </a>
-                <p class="works__desc">Компания помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
-                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Workers.</p>
-                <p class="works__desc">Принимал участие в разработке дизайна.</p>
-                <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код.</p>
+                <p class="works__desc works__desc--title">Сайт интернет-магазина гаджетов</p>
+                <p class="works__desc">Техническое задание:</p>
+                <ul class="works__desc-list">
+                  <li class="works__desc-item">Верстка главной страницы и страницы каталога товаров.</li>
+                  <li class="works__desc-item">Стандарты вёрстки: HTML5, CSS3, прогрессивное улучшение.</li>
+                  <li class="works__desc-item">Адаптивность вёрстки: нет.</li>
+                  <li class="works__desc-item">Кроссбраузерность: IE11, Edge, Chrome, Firefox, Opera, Safari.</li>
+                  <li class="works__desc-item">Вёрстка и анимация модального окна.</li>
+                </ul>
+                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript.</p>
+                <p class="works__desc">Реализация задания: 100%.</p>
               </li>
               <li class="works__item">
-                <div class="works__item-title-wrap works__item-title-wrap--bj">
-                  <h3 class="works__item-title">
-                    <span lang="en">BlackJack</span>
-                  </h3>
-                </div>
-                <a class="works__img-wrap works__img-wrap--bj" href="https://radiot4k.github.io/blackjack-site/" target="_blank">
+                <h3 class="works__item-title works__item-title--bj">
+                  <span lang="en">BlackJack</span>
+                </h3>
+                <a class="works__img-wrap works__img-wrap--bj" href="https://radiot4k.github.io/blackjack-site/" target="_blank" rel="noopener">
                   <div class="works__pic-wrap works__pic-wrap--phone">
                     <picture>
                       <source type="image/webp" srcset="img/blackjack2@1x.webp 1x, img/blackjack2@2x.webp 2x">
@@ -602,35 +594,24 @@
                   </div>
                   <div class="works__frame works__frame--phone2"></div>
                 </a>
-                <p class="works__desc">Компания помогает клиентам получить Лицензию Дилера Ценных Бумаг Вануату.</p>
-                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript, PHP, Service Workers.</p>
-                <p class="works__desc">Принимал участие в разработке дизайна.</p>
-                <p class="works__desc">Для увеличения скорости загрузки сайта оптимизированы все изображения, минифицирован код.</p>
+                <p class="works__desc works__desc--title">Игра</p>
+                <p class="works__desc">Собственный эксперементальный проект.</p>
+                <p class="works__desc">Техническое задание:</p>
+                <ul class="works__desc-list">
+                  <li class="works__desc-item">Разработка концепции и дизайна.</li>
+                  <li class="works__desc-item">Верстка всех страниц.</li>
+                  <li class="works__desc-item">Стандарты вёрстки: HTML5, CSS3, прогрессивное улучшение.</li>
+                  <li class="works__desc-item">Адаптивность вёрстки: мобильная, планшетная и десктопная версии.</li>
+                  <li class="works__desc-item">Кроссбраузерность: Edge, Chrome, Firefox, Opera, Safari.</li>
+                  <li class="works__desc-item">Реализация проекта исключительно с помощью HTML5, CSS3 и JavaScript без использования сторонних библиотек.</li>
+                </ul>
+                <p class="works__desc">Технологии: HTML5, CSS3, JavaScript.</p>
+                <p class="works__desc">В данный момент находится на стадии реализации.</p>
               </li>
             </ul>
           </section>
           <section class="contacts" id="contacts">
-            <h2 class="visually-hidden">Контакты</h2>
-            <p class="contacts__text">Вы можете найти меня в социальных сетях</p>
-            <ul class="contacts__social">
-              <li class="contacts__social-item">
-                <a href="https://github.com/Radiot4k">
-                  <span class="visually-hidden" lang="en">GitHub</span>
-                  <svg class="contacts__icon" width="20px" height="20px">
-                    <use xlink:href="#my-spade"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="contacts__social-item">
-                <a href="https://www.facebook.com/profile.php?id=100004322280249" target="_blank">
-                  <span class="visually-hidden" lang="en">Facebook</span>
-                  <svg class="contacts__icon" width="20px" height="20px">
-                    <use xlink:href="#my-spade"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-            <p class="contacts__text">или просто напишите мне</p>
+            <h2 class="contacts__title">Форма обратной связи</h2>
             <form class="contacts__form form" action="contact-form.php" method="post">
               <label for="form-name" class="visually-hidden">Ваше имя</label>
               <input type="text" id="form-name" name="name" class="form__input" placeholder="Имя *" required=""> <label for="form-email" class="visually-hidden">Ваш <span lang="en">email</span></label>

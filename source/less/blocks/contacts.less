@@ -14,23 +14,26 @@
   }
 }
 
-.contacts__text {
+.contacts__title {
   margin: 0;
-}
+  padding: 0 0 20px 0;
 
-.contacts__social {
-  display: flex;
-
-  margin: 20px 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.contacts__social-item {
-  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1a1a1a;
 }
 
 .contacts__form {
-  margin: 20px 0;
+  width: 100%;
+  margin: 17px 0;
+}
+
+@media (min-width: 768px) {
+  .contacts__form {
+    max-width: 550px;
+  }
+
+  .contacts__title {
+    padding-top: 5px;
+  }
 }
