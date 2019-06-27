@@ -22,7 +22,8 @@ module.exports = function(grunt) {
             "*.json",
             "*.xml",
             "*.png",
-            "*.js"
+            "*.js",
+            "*.svg"
           ],
           dest: "build"
         }]

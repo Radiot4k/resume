@@ -99,6 +99,7 @@
   padding: 25px 25px 0;
 
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
 .sidebar__title {
@@ -233,6 +234,10 @@
   text-transform: uppercase;
 }
 
+.section-wrap--show .sidebar__skills-progress::after {
+  transform: scaleX(1);
+}
+
 .sidebar__skills-progress {
   position: relative;
 
@@ -252,6 +257,9 @@
 
     background-color: #e7e7e7;
     border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease 0.8s;
   }
 
   &--96::after {
@@ -378,7 +386,7 @@
     height: 100%;
     padding: 0;
 
-    overflow: auto;
+    //overflow: auto;
     transform: none;
   }
 
