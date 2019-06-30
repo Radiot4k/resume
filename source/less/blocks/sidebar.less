@@ -9,8 +9,9 @@
   flex-direction: column;
   align-items: center;
 
-  height: 100%;
   width: 100%;
+  height: 100%;
+  min-width: 320px;
   padding: 48px 0 0;
 
   color: #e7e7e7;
@@ -33,7 +34,7 @@
   }
 
   &--show .sidebar__button::before {
-    background-color: #e7e7e7;
+    border-bottom-color: #e7e7e7;
     transform: translateX(-50%) rotateX(180deg);
     animation: 5s ease 5s sidebar-button-2;
     animation-iteration-count: infinite;
@@ -44,6 +45,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 
   width: 100%;
   height: 48px;
@@ -65,7 +67,7 @@
   &:hover::before,
   &:focus::before,
   &:active::before {
-    background-color: #1dbfb0;
+    border-bottom-color: #1dbfb0;
     animation: none;
   }
 
@@ -76,15 +78,54 @@
     top: 10px;
     left: 50%;
 
-    width: 34px;
-    height: 28px;
+    // width: 34px;
+    // height: 28px;
 
-    background-color: #5f5f5f;
+    border: 17px solid transparent;
+    border-bottom: 28px solid #5f5f5f;
+    border-top: 0;
+    //background-color: #5f5f5f;
     transform: translateX(-50%);
-    transition: background-color 0.4s ease, transform 0.4s ease 0.4s;
+    transition: border-bottom-color 0.4s ease, transform 0.4s ease 0.4s;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%, 0% 100%);
     animation: 5s ease 5s sidebar-button;
     animation-iteration-count: infinite;
+  }
+}
+
+@media (hover: none) {
+  .sidebar--show {
+    & .sidebar__button:hover {
+      background-color: #373737;
+    }
+
+    & .sidebar__button:hover::before {
+      border-bottom-color: #e7e7e7;
+    }
+
+    & .sidebar__button:active {
+      background-color: #e7e7e7;
+    }
+
+    & .sidebar__button:active::before {
+      border-bottom-color: #1dbfb0;
+    }
+  }
+
+  .sidebar__button:hover {
+    background-color: #e7e7e7;
+
+    &::before {
+      border-bottom-color: #5f5f5f;
+    }
+  }
+
+  .sidebar__button:active {
+    background-color: #373737;
+
+    &::before {
+      border-bottom-color: #1dbfb0;
+    }
   }
 }
 
@@ -94,12 +135,7 @@
   display: none;
 
   width: 100%;
-  max-width: 400px;
-  height: 100%;
-  padding: 25px 25px 0;
-
-  overflow: auto;
-  scroll-behavior: smooth;
+  padding: 25px calc((100% - 270px) / 2) 0;
 }
 
 .sidebar__title {
@@ -332,7 +368,6 @@
 
 .sidebar__contacts-list {
   margin: 0;
-  margin-bottom: 25px;
   padding: 0;
 
   list-style: none;
@@ -340,6 +375,10 @@
 
 .sidebar__contacts-item {
   margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   & a {
     display: flex;

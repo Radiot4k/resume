@@ -7,8 +7,7 @@
   height: 100%;
   padding: 0 25px;
 
-  overflow: auto;
-  scroll-behavior: smooth;
+  overflow: hidden;
 
   &--show {
     display: block;
@@ -113,6 +112,11 @@
       width: 50%;
     }
 
+    & .resume__item:nth-last-child(1),
+    & .resume__item:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
     & .resume__item:nth-child(odd) .resume__list {
       margin-right: 10px;
     }
@@ -134,6 +138,11 @@
       box-sizing: border-box;
 
       width: 50%;
+    }
+
+    & .resume__item:nth-last-child(1),
+    & .resume__item:nth-last-child(2) {
+      margin-bottom: 0;
     }
 
     & .resume__item:nth-child(odd) .resume__list {

@@ -1,4 +1,6 @@
 .form {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 }
@@ -17,6 +19,11 @@
   border-bottom: 1px solid #373737;
   border-radius: 0;
   background: 0 0;
+
+  &:focus,
+  &:focus-within {
+    border-bottom-color: #1dbfb0;
+  }
 }
 
 .form__textarea {
@@ -33,14 +40,19 @@
   border-bottom: 1px solid #373737;
   border-radius: 0;
   background: 0 0;
-
   resize: none;
+
+  &:focus,
+  &:focus-within {
+    border-bottom-color: #1dbfb0;
+  }
 }
 
 .form__button {
   align-self: center;
 
   margin: 0;
+  margin-bottom: 5px;
   padding: 15px 0;
 
   border: 0;
@@ -51,5 +63,23 @@
   &:hover,
   &:focus {
     color: #1dbfb0;
+  }
+}
+
+.form__notification {
+  position: absolute;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  color: green;
+  background-color: #e7e7e7;
+
+  &--show {
+    display: flex;
   }
 }
