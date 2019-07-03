@@ -1,7 +1,5 @@
 'use strict';
 
-window.addEventListener('load', function () {
-
 var TIME = 400;
 var PX = 48;
 var ESC_KEYCODE = 27;
@@ -40,19 +38,6 @@ var sidebarWrap = sidebarChildren[1];
 var images = sectionWrap.querySelectorAll('.works__img-wrap');
 var inputName = sectionWrap.querySelector('#form-name');
 
-var debounce = function (fun) {
-  var lastTimeout = null;
-  return function () {
-    var args = arguments;
-    if (lastTimeout) {
-      window.clearTimeout(lastTimeout);
-    }
-    lastTimeout = window.setTimeout(function () {
-      fun.apply(null, args);
-    }, TIME);
-  };
-};
-
 var isUpDownKeyEvent = function (evt, action) {
   if (evt.keyCode === UP_KEYCODE) {
     action(evt, 1);
@@ -86,42 +71,6 @@ var isNumEvent = function (evt, action) {
   }
 };
 
-var imagesTop = [];
-
-var displayImages = function () {
-  for (var i = 1; i < images.length; i++) {
-    if (body.getBoundingClientRect().height < images[i].getBoundingClientRect().top + images[i].getBoundingClientRect().height) {
-      imagesTop.push([i, images[i].getBoundingClientRect().top - images[0].getBoundingClientRect().top + images[i].getBoundingClientRect().height]);
-      images[i].style.display = 'none';
-    }
-  }
-};
-
-var onWorksScroll = function () {
-  for (var i = 0; i < imagesTop.length; i++) {
-    if (body.getBoundingClientRect().height > imagesTop[i][1] + images[0].getBoundingClientRect().top && images[imagesTop[i][0]].style.display === 'none') {
-      images[imagesTop[i][0]].style.display = 'block';
-    }
-  }
-};
-
-var addWheelEvent = function (elem) {
-  if (elem.addEventListener) {
-    if ('onwheel' in document) {
-      // IE9+, FF17+, Ch31+
-      elem.addEventListener("wheel", onWheel);
-    } else if ('onmousewheel' in document) {
-      // устаревший вариант события
-      elem.addEventListener("mousewheel", onWheel);
-    } else {
-      // Firefox < 17
-      elem.addEventListener("MozMousePixelScroll", onWheel);
-    }
-  } else { // IE8-
-    elem.attachEvent("onmousewheel", onWheel);
-  }
-};
-
 var isEscEvent = function (evt, action) {
   if (evt.keyCode === ESC_KEYCODE) {
     action(evt);
@@ -141,7 +90,6 @@ var onEscPress = function (evt) {
 };
 
 var onUpDownKeyPress = function (evt) {
-  evt.preventDefault();
   isUpDownKeyEvent(evt, onUpDownKey);
 };
 
@@ -161,118 +109,26 @@ var addListener = function(element, listener, evt) {
   element.addEventListener(evt, listener);
 };
 
-var onElemTouch = function (evt) {
-  evt.preventDefault();
-  var element = evt.currentTarget;
-  var startY = evt.changedTouches[0].pageY;
-  var beginY = startY;
-  var moveTime;
-  var endTime;
-  var onTouchMove = function (moveEvt) {
-    var shift = startY - moveEvt.changedTouches[0].pageY;
-    startY = moveEvt.changedTouches[0].pageY;
-    transformElement(element, shift, 'none');
-    moveTime = moveEvt.timeStamp;
-    //moveEvt.preventDefault();
-  };
-  var onTouchEnd = function (endEvt) {
-    endEvt.preventDefault();
-    var endY = endEvt.changedTouches[0].pageY;
-    var shift = beginY - endY;
-    endTime = endEvt.timeStamp;
-    if (endTime - moveTime < 100) {
-      transformElement(element, shift * 2, '0.8s ease-out');
-    }
-    //transformElement(element, shift * 2, '0.8s ease-out');
-    document.removeEventListener('touchmove', onTouchMove);
-    document.removeEventListener('touchend', onTouchEnd);
-  };
-  document.addEventListener('touchmove', onTouchMove);
-  document.addEventListener('touchend', onTouchEnd);
+var scrolllUp = function (element) {
+  element.scrollTop = 0;
 };
-
-var transformElement = function (element, delta, transition) {
-  var sectionWrapTop = getComputedStyle(sectionWrap).paddingTop.slice(0, -2);
-  var parentTop = element.parentElement.getBoundingClientRect().top;
-  var sectionWrapHeight = sectionWrap.getBoundingClientRect().height;
-  var elemHeight = element.getBoundingClientRect().height;
-  var elemStart = getComputedStyle(element).transform;
-  if (elemStart === 'none') {
-    elemStart = 0;
-  } else {
-    elemStart = elemStart.slice(22, -1);
-  }
-  var transformValue = elemStart - delta;
-  if (transformValue < -elemHeight + sectionWrapHeight - sectionWrapTop - parentTop) {
-    transformValue = -elemHeight + sectionWrapHeight - sectionWrapTop - parentTop;
-  }
-  if (transformValue > 0) {
-    transformValue = 0;
-  }
-  element.style.transform = 'translateY(' + transformValue + 'px)';
-  element.style.transition = transition;
-  if (element.parentElement.classList.contains('works')) {
-    onWorksScroll();
-  }
-};
-
-// var transformElement = function (element, delta, transition) {
-//   var sectionWrapTop = getComputedStyle(sectionWrap).paddingTop.slice(0, -2);
-//   var parentTop = element.parentElement.getBoundingClientRect().top;
-//   var sectionWrapHeight = sectionWrap.getBoundingClientRect().height;
-//   var elemHeight = element.getBoundingClientRect().height;
-//   var elemStart = getComputedStyle(element).transform;
-//   var OVER = 30;
-//   var endElement = function (tv) {
-//     element.style.transform = 'translateY(' + tv + 'px)';
-//     element.style.transition = '0.4s ease 0.4s';
-//   };
-//   if (elemStart === 'none') {
-//     elemStart = 0;
-//   } else {
-//     elemStart = elemStart.slice(22, -1);
-//   }
-//   var transformValue = elemStart - delta;
-//   if (transformValue < -elemHeight + sectionWrapHeight - sectionWrapTop - parentTop && elemStart <= -elemHeight + sectionWrapHeight - sectionWrapTop - parentTop) {
-//     transformValue = -elemHeight + sectionWrapHeight - sectionWrapTop - parentTop - OVER;
-//     element.style.transform = 'translateY(' + transformValue + 'px)';
-//     element.style.transition = '0.4s ease';
-//     transformValue = -elemHeight + sectionWrapHeight - sectionWrapTop - parentTop;
-//     window.setTimeout(endElement, TIME, transformValue);
-//   } else if (transformValue > 0 && elemStart >= 0) {
-//     transformValue = OVER;
-//     element.style.transform = 'translateY(' + transformValue + 'px)';
-//     element.style.transition = '0.4s ease';
-//     transformValue = 0;
-//     window.setTimeout(endElement, TIME, transformValue);
-//   } else {
-//     element.style.transform = 'translateY(' + transformValue + 'px)';
-//     element.style.transition = transition;
-//   }
-//   if (element.parentElement.classList.contains('works')) {
-//     onWorksScroll();
-//   }
-// };
 
 var onUpDownKey = function (evt, flag) {
+  evt.preventDefault();
   var DELTA = -150;
+  var element;
   if (flag === 2) {
     DELTA = 150;
   }
   if (evt.altKey) {
-    transformElement(sidebarWrap, DELTA, '0.2s ease');
+    element = sidebarWrap;
   } else {
     var dataLink = sectionWrapButton.dataset.link;
-    var element = sectionWrap.querySelector('.' + dataLink).lastChild;
-    transformElement(element, DELTA, '0.2s ease');
+    var element = sectionWrap.querySelector('.' + dataLink);
   }
-};
-
-var onWheel = function (evt) {
-  evt = evt || window.event;
-  evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
-  var delta = evt.deltaY || evt.detail || evt.wheelDelta;
-  transformElement(evt.currentTarget, delta, 'none');
+  element.classList.add('smooth');
+  element.scrollTop = element.scrollTop + DELTA;
+  window.setTimeout(removeClass, TIME, element, 'smooth');
 };
 
 var showHideHeaderText = function () {
@@ -329,7 +185,7 @@ var onSectionWrapButtonClick = function (evt) {
 var onSidebarButtonClick = function (evt) {
   evt.preventDefault();
   sidebar.classList.toggle('sidebar--show');
-  sidebarWrap.style.transform = 'none';
+  sidebarWrap.scrollTop = 0;
   sidebarButton.blur();
   window.setTimeout(toggleClass, TIME, sectionWrapButtonWrap, 'section-wrap__button-wrap--show');
   window.setTimeout(toggleClass, TIME * 2, sectionWrapButton, 'section-wrap__button--show');
@@ -371,9 +227,38 @@ var onNavItemClick = function (evt, num) {
   } else {
     var dataLink = clickedElement.dataset.link;
     var showElement = sectionWrap.querySelector('.' + dataLink);
+    var setChildrenMinWidth = function () {
+      for (var i = 0; i < showElement.children.length; i++) {
+        if (!showElement.children[i].classList.contains('visually-hidden')) {
+          showElement.children[i].style.minWidth = showElement.getBoundingClientRect().width - 50 + 'px';
+        }
+      }
+    };
     showElement.classList.add(dataLink + '--show');
+    window.setTimeout(setChildrenMinWidth, TIME * 3);
+    window.setTimeout(addListener, TIME * 5, window, setChildrenMinWidth, 'resize');
     if (dataLink === 'works') {
+      var imagesTop = [];
+      var displayImages = function () {
+        for (var i = 1; i < images.length; i++) {
+          if (body.getBoundingClientRect().height < images[i].getBoundingClientRect().top + images[i].getBoundingClientRect().height) {
+            imagesTop.push([i, images[i].getBoundingClientRect().top - images[0].getBoundingClientRect().top + images[i].getBoundingClientRect().height]);
+            images[i].style.display = 'none';
+          }
+        }
+      };
+      var onWorksScroll = function () {
+        for (var i = 0; i < imagesTop.length; i++) {
+          if (body.getBoundingClientRect().height > imagesTop[i][1] + images[0].getBoundingClientRect().top && images[imagesTop[i][0]].style.display === 'none') {
+            images[imagesTop[i][0]].style.display = 'block';
+          }
+          if (images[images.length - 1].style.display === 'block') {
+            showElement.removeEventListener('scroll', onWorksScroll);
+          }
+        }
+      };
       window.setTimeout(displayImages, TIME * 3);
+      showElement.addEventListener('scroll', onWorksScroll);
     }
     if (dataLink === 'contacts') {
       var addFocus = function () {
@@ -382,15 +267,13 @@ var onNavItemClick = function (evt, num) {
       window.setTimeout(addFocus, TIME * 5);
     }
     sectionWrapButtonWrap.classList.add('section-wrap__button-wrap--show');
-    addWheelEvent(sidebarWrap);
-    addWheelEvent(showElement.lastChild);
-    sidebarWrap.style.transform = 'none';
-    showElement.lastChild.style.transform = 'none';
     window.setTimeout(addClass, TIME * 2, header, 'header--hide');
     window.setTimeout(removeClass, TIME * 2, main, 'main--hide');
     window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--anim');
     window.setTimeout(toggleClass, TIME, wrapper, 'wrapper--open');
     window.setTimeout(addClass, TIME * 3, sectionWrap, 'section-wrap--show');
+    window.setTimeout(scrolllUp, TIME * 2, sidebarWrap);
+    window.setTimeout(scrolllUp, TIME * 2, showElement);
     window.setTimeout(addClass, TIME * 4, sectionWrapButton, 'section-wrap__button--show');
     window.setTimeout(addClass, TIME * 5, sectionWrapButton, 'section-wrap__button--anim');
     sectionWrapButton.dataset.link = dataLink;
@@ -404,8 +287,6 @@ var onNavItemClick = function (evt, num) {
     sidebarButton.addEventListener('click', onSidebarButtonClick);
     window.setTimeout(addListener, TIME * 5, document, onEscPress, 'keydown');
     window.setTimeout(addListener, TIME * 5, document, onUpDownKeyPress, 'keydown');
-    window.setTimeout(addListener, TIME * 5, sidebarWrap, onElemTouch, 'touchstart');
-    window.setTimeout(addListener, TIME * 5, showElement.lastChild, onElemTouch, 'touchstart');
   }
 };
 
@@ -418,13 +299,3 @@ headerButton.addEventListener('mouseenter', function () {
   setWillChange(navItems, 'transform, opacity');
 });
 document.addEventListener('keydown', onMainSpacePress);
-window.addEventListener('resize', function () {
-  sidebarWrap.style.transform = 'none';
-  var sections = sectionWrap.querySelectorAll('.about, .resume, .works, .contacts');
-  for (var i = 0; i < sections.length; i++) {
-    sections[i].lastChild.style.transform = 'none';
-  }
-});
-
-
-}, false);

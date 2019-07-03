@@ -137,7 +137,7 @@ img {
   //transform: translateX(-100%);
   transition: transform 0.4s ease;
 
-  overflow: hidden;
+  //overflow: hidden;
 
   &--show {
     //position: initial;
@@ -158,7 +158,7 @@ img {
 .section-wrap--show .resume,
 .section-wrap--show .works,
 .section-wrap--show .contacts {
-  transform: translateX(0);
+  transform: translateX(20px);
 }
 
 .section-wrap .sidebar {
@@ -206,6 +206,9 @@ img {
 
   &--show {
     transform: translateY(0);
+  }
+
+  &--anim {
     animation: 5s ease 5s section-button;
     animation-iteration-count: infinite;
   }
@@ -239,6 +242,10 @@ img {
     //background-color: #1dbfb0;
     border-right-color: #1dbfb0;
   }
+}
+
+.smooth {
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 568px) {
@@ -315,6 +322,16 @@ img {
 
   15%, 100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes section-button-firefox {
+  0% {
+    transform: translateY(-200%);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 
